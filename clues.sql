@@ -54,7 +54,15 @@ SELECT * FROM public.city c WHERE c.countrycode = 'SMR';
 -- headed to, but doesn't end the same. Find out the city, and do another search for what country it's in. Hurry!
 
 -- Write SQL query here
+SELECT c.name, i.name, c.code
+FROM public.country c 
+JOIN public.city i
+ON c.code = i.countrycode
+WHERE i.name 
+LIKE 'Serra%';
 
+-- city name: Serra
+-- country name: Brazil
 
 -- Clue #6: We're close! Our South American agent says she just got a taxi at the airport, and is headed towards
 -- the capital! Look up the country's capital, and get there pronto! Send us the name of where you're headed and we'll
