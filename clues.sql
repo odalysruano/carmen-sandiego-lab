@@ -30,7 +30,14 @@ WHERE c.code = 'VAT';
 -- nearby country speaks nothing but that language.
 
 -- Write SQL query here
+SELECT c.name, c.code
+FROM public.country c 
+JOIN public.countrylanguage l 
+ON c.code = l.countrycode
+WHERE l.language = 'Italian' AND l.percentage = '100';
 
+-- name: San Marino
+-- code: SMR
 
 -- Clue #4: We're booking the first flight out – maybe we've actually got a chance to catch her this time.
 -- There are only two cities she could be flying to in the country. One is named the same as the country – that
